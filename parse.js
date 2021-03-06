@@ -70,7 +70,7 @@ function getTagCategory(tagName) {
 
 function parseEXTINF(param) {
   const pair = utils.splitAt(param, ',');
-  return {duration: utils.toNumber(pair[0]), title: decodeURIComponent(escape(pair[1]))};
+  return {duration: utils.toNumber(pair[0]), title: decodeURIComponent(encodeURIComponent(pair[1]))};
 }
 
 function parseBYTERANGE(param) {
